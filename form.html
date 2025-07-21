@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <!-- form box -->
+    <div class="contact-box">
+       <p style="text-align: center;font-size: x-large;">Sign In:</p> 
+    <form name="signin" onsubmit="return validateform()" style="margin-top: 0;">
+        <!-- form input fields  -->
+        <input type="text" class="input-field" placeholder="Your Name"name="name">
+        <input type="email" class="input-field" placeholder="Your Email"name="email">
+        <input type="text" class="input-field" placeholder="Address"name="address">
+        <input type="password" class="input-field" placeholder="Password"name="password">
+        <br><br>
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+        <br>
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+        <button type="button" class="bt" onclick="validateform()">Submit</button>
+        <!-- go back to home page  -->
+        <a href="index.html"><button type="button" class="bt">Go back</button></a>
+        </form>
+    </form>
+</div>
+<script>
+    function validateform() {
+          var name = document.forms["signin"]["name"].value;
+          var email = document.forms["signin"]["email"].value;
+          var address = document.forms["signin"]["address"].value;
+          var password = document.forms["signin"]["password"].value;
+
+          if(name === "" || email === "" || address === "" || password === "") {
+            alert("Please fill up all the fields");
+            return false;
+          } else {
+            alert("Form has been successfully submitted");
+            return true;
+          }
+        }
+</script>
+</body>
+</html>

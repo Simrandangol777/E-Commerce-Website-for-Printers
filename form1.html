@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/form1.css">
+</head>
+<body>
+    <!-- form box -->
+    <div class="contact-box">
+       <p style="text-align: center;font-size: x-large;">Feedback:</p> 
+    <form name="signin" onsubmit="return validateform()" style="margin-top: 0;">
+        <!-- form input fields  -->
+        <input type="text" class="input-field" placeholder="Your Name"name="name">
+        <input type="email" class="input-field" placeholder="Your Email"name="email">
+        <textarea type="text" class="input-field textarea-field" placeholder="Your Message" style="resize: none;"></textarea>
+        </textarea>
+        <button type="button" class="bt" onclick="validateform()">Send Message</button>
+        <!-- go back to home page  -->
+        <a href="pages/aboutus.html"><button type="button" class="bt">Go back</button></a>
+        </form>
+    </form>
+</div>
+<script>
+    function validateform() {
+          var name = document.forms["signin"]["name"].value;
+          var email = document.forms["signin"]["email"].value;
+
+          if(name === "" || email === "") {
+            alert("Please fill up all the fields");
+            return false;
+          } else {
+            alert("Form has been successfully submitted");
+            return true;
+          }
+        }
+</script>
+</body>
+</html>
